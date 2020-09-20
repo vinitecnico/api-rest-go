@@ -11,4 +11,6 @@ http://localhost:8000/contato/{id} -- DELETE
 ### run test
 ```
 go test -v
+
+go test -coverprofile cover.out
 ```
