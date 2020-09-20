@@ -25,6 +25,7 @@ var people []Person
 
 // GetPeople mostra todos os contatos da variável people
 func GetPeople(w http.ResponseWriter, r *http.Request) {
+	people = append(people, Person{ID: "1", Firstname: "John", Lastname: "Doe", Address: &Address{City: "City X", State: "State X"}})
 	json.NewEncoder(w).Encode(people)
 }
 
