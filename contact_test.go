@@ -1,6 +1,7 @@
 package main
 
 import (
+	"api-rest-go/controllers"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -15,7 +16,7 @@ func TestGetPeopleShouldReturnSuccess(t *testing.T) {
 
 	// We create a ResponseRecorder (which satisfies http.ResponseWriter) to record the response.
 	rr := httptest.NewRecorder()
-	handler := http.HandlerFunc(GetPeople)
+	handler := http.HandlerFunc(controllers.GetPeople)
 
 	// Our handlers satisfy http.Handler, so we can call their ServeHTTP method
 	// directly and pass in our Request and ResponseRecorder.
@@ -44,7 +45,7 @@ func TestGetPersonShouldReturnSuccess(t *testing.T) {
 
 	// We create a ResponseRecorder (which satisfies http.ResponseWriter) to record the response.
 	rr := httptest.NewRecorder()
-	handler := http.HandlerFunc(GetPerson)
+	handler := http.HandlerFunc(controllers.GetPerson)
 
 	// Our handlers satisfy http.Handler, so we can call their ServeHTTP method
 	// directly and pass in our Request and ResponseRecorder.
